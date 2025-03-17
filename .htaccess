@@ -1,0 +1,35 @@
+# Activation de la compression Gzip pour réduire la taille des fichiers
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript
+</IfModule>
+
+# Activation de la mise en cache pour améliorer la performance
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
+
+# Désactivation du listing des fichiers
+Options -Indexes
+
+# Protection contre l'exécution de scripts non autorisés dans certains fichiers sensibles
+<FilesMatch "\.(json|md)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Redirection vers HTTPS (si nécessaire)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTPS} !=on
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# Ajout d’un cache control pour optimiser le chargement
+<IfModule mod_headers.c>
+    Header set Cache-Control "max-age=31536000, public"
+</IfModule>
