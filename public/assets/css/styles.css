@@ -69,6 +69,24 @@ body {
     color: var(--primary);
 }
 
+/* Lien vers la page admin */
+.admin-link {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: bold;
+    margin-right: 15px;
+    padding: 5px 10px;
+    border: 1px solid var(--white);
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.admin-link:hover {
+    background: var(--white);
+    color: var(--primary);
+}
+
+
 /* Section Hero */
 .hero {
     text-align: center;
@@ -196,5 +214,41 @@ textarea {
 
 .btn:hover {
     background: var(--secondary);
+}
+
+/* Conteneur principal */
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Mentions légales */
+.legal {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Style de l'article */
+.article {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.article h2, .article h3 {
+    color: var(--primary);
+}
+
+.article ul {
+    padding-left: 20px;
+}
+
+.article ul li {
+    margin-bottom: 10px;
 }
 

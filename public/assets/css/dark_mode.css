@@ -36,6 +36,17 @@ body.dark-mode {
     color: var(--primary);
 }
 
+.dark-mode .admin-link {
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+}
+
+.dark-mode .admin-link:hover {
+    background: var(--secondary);
+    color: white;
+}
+
+
 /* Section Hero */
 .dark-mode .hero {
     background: var(--secondary);
@@ -82,4 +93,29 @@ body.dark-mode {
 
 .dark-mode .btn:hover {
     background: var(--primary);
+}
+
+
+.dark-mode .container {
+    background: var(--background);
+    color: var(--text);
+}
+
+.dark-mode .legal,
+.dark-mode .article {
+    background: #222;
+    color: var(--text);
+    box-shadow: none;
+}
+
+.dark-mode .article h2, .dark-mode .article h3 {
+    color: var(--secondary);
+}
+
+.dark-mode a {
+    color: #66c2ff;
+}
+
+.dark-mode a:hover {
+    color: var(--white);
 }
