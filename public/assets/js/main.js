@@ -38,9 +38,11 @@ document.addEventListener("DOMContentLoaded", () => {
             const articleDiv = document.createElement("div");
             articleDiv.classList.add("article");
 
+            let imagePath = `../../${article.image.replace(".jpg", ".webp")}`;
+
             let imageTag = "";
             if (index < 5 && article.image) {
-                imageTag = `<img src="${article.image}" alt="${article.title}" class="lazyload">`;
+                imageTag = `<img data-src="${imagePath}" alt="${article.title}" class="lazyload">`;
             }
 
             articleDiv.innerHTML = `
@@ -76,8 +78,11 @@ document.addEventListener("DOMContentLoaded", () => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const img = entry.target;
+                    console.log("✅ Chargement de l'image :", img.dataset.src);
                     img.src = img.dataset.src;
+                    img.removeAttribute("data-src");
                     img.classList.remove("lazyload");
+                    img.classList.add("article-image");
                     observer.unobserve(img);
                 }
             });
