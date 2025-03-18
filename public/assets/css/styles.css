@@ -252,3 +252,31 @@ textarea {
     margin-bottom: 10px;
 }
 
+
+.crud {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.article-item {
+    background: var(--white);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.article-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px 0;
+}
+
+button {
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-right: 5px;
+}
+

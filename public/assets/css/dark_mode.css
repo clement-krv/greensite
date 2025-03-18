@@ -119,3 +119,42 @@ body.dark-mode {
 .dark-mode a:hover {
     color: var(--white);
 }
+
+.dark-mode .article-item {
+    background: #222; 
+    color: var(--text); 
+    border: 1px solid #444; 
+}
+
+.dark-mode .article-item h3,
+.dark-mode .article-item p {
+    color: var(--text); 
+}
+
+.dark-mode .article-item img {
+    background: #fff; 
+    padding: 5px;
+    border-radius: 5px;
+}
+.dark-mode .edit-btn,
+.dark-mode .delete-btn {
+    background: var(--secondary);
+    color: var(--white);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.dark-mode .edit-btn:hover {
+    background: #008b62;
+}
+
+.dark-mode .delete-btn {
+    background: #ff5555;
+}
+
+.dark-mode .delete-btn:hover {
+    background: #cc0000;
+}

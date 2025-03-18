@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interface d'administration pour gérer les articles du site GreenSite.">
+    <meta name="keywords" content="Admin, CRUD, Gestion des articles, Green IT">
+    <meta name="author" content="Projet Green IT">
+    <meta property="og:title" content="Admin - GreenSite">
+    <meta property="og:description" content="Ajoutez, modifiez et supprimez des articles directement depuis l'administration.">
+    <meta property="og:image" content="assets/images/admin-preview.jpg">
+    <meta property="og:url" content="https://greenit.fr/admin.html">
+    <link rel="canonical" href="https://greenit.fr/admin.html">
+    <title>Admin - Gestion des Articles</title>
+
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/dark_mode.css">
+
+    <script src="../../data/articles.js" defer></script>
+    <script src="../assets/js/main.js" defer></script>
+    <script src="../assets/js/admin.js" defer></script>
+</head>
+<body>
+
+    <header class="header">
+        <h1>Administration - Gestion des Articles</h1>
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="mentions.html" class="nav-link">Mentions Légales</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="index.html" class="admin-link">🏠 Retour au site</a>
+                <button id="dark-mode-toggle" class="dark-mode-btn">🌙 Mode Sombre</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="crud">
+            <h2>Gérer les Articles</h2>
+
+            <form id="article-form">
+                <input type="hidden" id="article-id">
+                
+                <div class="form-group">
+                    <label for="title">Titre :</label>
+                    <input type="text" id="title" placeholder="Titre de l'article" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="slug">Slug :</label>
+                    <input type="text" id="slug" placeholder="URL courte (ex: introduction-green-it)" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="author">Auteur :</label>
+                    <input type="text" id="author" placeholder="Nom de l'auteur" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="content">Contenu :</label>
+                    <textarea id="content" rows="5" placeholder="Contenu de l'article" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="image">Image URL :</label>
+                    <input type="text" id="image" placeholder="URL de l'image">
+                </div>
+
+                <button type="submit" class="btn">✅ Enregistrer</button>
+            </form>
+
+            <h3>Liste des Articles</h3>
+            <div id="articles-list"></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 GreenSite - Tous droits réservés</p>
+    </footer>
+
+</body>
+</html>
