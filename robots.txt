@@ -1,15 +1,5 @@
 User-agent: *
-Disallow: /admin/
-Disallow: /data/
-Disallow: /versioning/
-
+Disallow: /admin.html
 Allow: /
 
 Sitemap: https://greensite.fr/sitemap.xml
-
-Disallow: /*.json$
-Disallow: /*.md$
-Disallow: /*.git$
-
-User-agent: BadBot
-Disallow: /

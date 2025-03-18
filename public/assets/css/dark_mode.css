@@ -1,0 +1,30 @@
+/* Mode sombre activé via une classe */
+body.dark-mode {
+    --background: #121212;
+    --text: #e0e0e0;
+    --primary: #009688;
+    --secondary: #007a5e;
+    --white: #333;
+    --dark-gray: #f4f4f4;
+}
+
+/* Header et Footer */
+.dark-mode .header,
+.dark-mode .footer {
+    background: var(--dark-gray);
+}
+
+.dark-mode .nav-link {
+    color: var(--dark-gray);
+}
+
+.dark-mode .hero {
+    background: var(--secondary);
+    color: var(--white);
+}
+
+/* Articles */
+.dark-mode .article {
+    background: #1e1e1e;
+    color: var(--text);
+}

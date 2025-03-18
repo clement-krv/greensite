@@ -1,0 +1,122 @@
+/* Variables globales pour le thème clair */
+:root {
+    --background: #f4f4f4;
+    --text: #333;
+    --primary: #007a5e;
+    --secondary: #009688;
+    --white: #fff;
+    --dark-gray: #222;
+}
+
+/* Style général */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Header */
+.header {
+    background: var(--primary);
+    color: var(--white);
+    padding: 1rem;
+    text-align: center;
+}
+
+.site-title span {
+    font-weight: bold;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-list li {
+    margin: 0 10px;
+}
+
+.nav-link {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.dark-mode-btn {
+    background: none;
+    border: 2px solid var(--white);
+    color: var(--white);
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.dark-mode-btn:hover {
+    background: var(--white);
+    color: var(--primary);
+}
+
+/* Section Hero */
+.hero {
+    text-align: center;
+    padding: 2rem;
+    background: var(--secondary);
+    color: var(--white);
+}
+
+.hero-title {
+    margin-bottom: 0.5rem;
+}
+
+.hero .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 10px 20px;
+    background: var(--primary);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Section Articles */
+.articles {
+    max-width: 800px;
+    margin: auto;
+    padding: 1rem;
+}
+
+#articles-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.article {
+    background: var(--white);
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1 1 300px;
+}
+
+/* Footer */
+.footer {
+    background: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
