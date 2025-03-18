@@ -2,6 +2,23 @@
 
 **GreenSite** est un site web vitrine conçu avec une approche **Green IT**, visant à minimiser l'impact environnemental du numérique tout en assurant une expérience utilisateur fluide et optimisée.
 
+## 📖 Table des Matières
+1. [🚀 Technologies Utilisées et Justification](#-technologies-utilisées-et-justification)
+2. [🔥 Fonctionnalités Implémentées](#-fonctionnalités-implémentées)
+3. [⚖️ Compromis et Justifications](#️-compromis-et-justifications)
+   - [1️⃣ Pas d'utilisation de frameworks](#1️⃣-pas-dutilisation-de-frameworks)
+   - [2️⃣ Pas de base de données / Backend](#2️⃣-pas-de-base-de-données--backend)
+   - [3️⃣ WebP vs AVIF : Pourquoi j’ai choisi WebP ?](#3️⃣-webp-vs-avif--pourquoi-jai-choisi-webp-)
+4. [🌍 Hébergement et Mise en Production avec Green IT](#-hébergement-et-mise-en-production-avec-green-it)
+   - [📌 Objectifs pour une mise en production Green IT](#📌-objectifs-pour-une-mise-en-production-green-it)
+   - [✅ Solutions possibles](#✅-solutions-possibles)
+   - [📌 Pourquoi pas un serveur classique ?](#📌-pourquoi-pas-un-serveur-classique-)
+5. [❓ Pourquoi il n’y a pas de `.htaccess` dans ce projet ?](#-pourquoi-il-ny-a-pas-de-htaccess-dans-ce-projet-)
+6. [🏗️ Installation et Déploiement](#️-installation-et-déploiement)
+7. [📜 Licence](#-licence)
+8. [👨‍💻 Auteur](#-auteur)
+
+
 ## 🚀 Technologies Utilisées et Justification
 
 | Technologie | Raison du choix |
