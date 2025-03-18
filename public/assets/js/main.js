@@ -3,13 +3,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const toggleButton = document.getElementById("dark-mode-toggle");
     const body = document.body;
 
-    // Vérifier si le mode sombre est activé
     if (localStorage.getItem("darkMode") === "enabled") {
         body.classList.add("dark-mode");
         toggleButton.textContent = "☀ Mode Clair";
     }
 
-    // Gestion du bouton Dark Mode
     toggleButton.addEventListener("click", () => {
         body.classList.toggle("dark-mode");
 
@@ -22,27 +20,22 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // 🔹 Vérifier si localStorage contient déjà des articles
     if (!localStorage.getItem("articles") || localStorage.getItem("articles") === "undefined") {
         console.log("📌 Initialisation de localStorage avec les articles de articles.js");
-        localStorage.setItem("articles", JSON.stringify(window.articlesData)); // Stocker en JSON
+        localStorage.setItem("articles", JSON.stringify(window.articlesData));
     }
 
-    // Récupérer les articles en s'assurant que `localStorage` n'est pas vide
     let articles = JSON.parse(localStorage.getItem("articles") || "[]");
 
-    // Vérification que les articles sont bien récupérés
     if (!articles || articles.length === 0) {
         console.error("❌ Erreur : Aucun article trouvé !");
         return;
     }
 
-    // Affichage des articles
     afficherArticles(articles);
 
-    // Fonction pour afficher les articles dynamiquement
     function afficherArticles(articles) {
-        articlesContainer.innerHTML = ""; // Nettoyer le container avant ajout
+        articlesContainer.innerHTML = ""; 
 
         articles.forEach((article) => {
             const articleDiv = document.createElement("div");
@@ -53,17 +46,25 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p>${article.content}</p>
                 <p><strong>Écrit par :</strong> ${article.author} - <em>${article.date}</em></p>
                 <img src="" data-src="${article.image}" class="lazyload" alt="${article.title}">
-                <p><strong>Tags:</strong> ${article.tags.join(", ")}</p>
-                <a href="${article.slug}.html" class="btn">Lire plus</a>
             `;
 
+            const tagsContainer = document.createElement("div");
+            tagsContainer.classList.add("tags");
+
+            article.tags.forEach(tag => {
+                const tagElement = document.createElement("span");
+                tagElement.classList.add("tag");
+                tagElement.textContent = tag;
+                tagsContainer.appendChild(tagElement);
+            });
+
+            articleDiv.appendChild(tagsContainer);
             articlesContainer.appendChild(articleDiv);
         });
 
         activerLazyLoad();
     }
 
-    // Fonction pour activer LazyLoad sur les images
     function activerLazyLoad() {
         const images = document.querySelectorAll("img.lazyload");
 
@@ -71,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const img = entry.target;
-                    img.src = img.dataset.src; // Charger l'image réelle
+                    img.src = img.dataset.src; 
                     img.classList.remove("lazyload");
                     observer.unobserve(img);
                 }

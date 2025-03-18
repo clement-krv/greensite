@@ -112,6 +112,26 @@ body {
     flex: 1 1 300px;
 }
 
+/* Styles des tags des articles */
+.article .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px; /* Espacement entre les tags */
+    margin-top: 10px;
+}
+
+.article .tag {
+    background-color: #007a5e; /* Vert éco-responsable */
+    color: white;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 5px; /* Coins arrondis */
+    text-transform: uppercase;
+    font-weight: bold;
+    display: inline-block;
+}
+
+
 /* Footer */
 .footer {
     background: var(--primary);
@@ -120,3 +140,61 @@ body {
     padding: 1rem;
     margin-top: 2rem;
 }
+
+/* Section Contact */
+.contact-form {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background: var(--white);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Style du formulaire */
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Champs du formulaire */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--dark-gray);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Bouton */
+.btn {
+    padding: 10px 15px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background: var(--secondary);
+}
+

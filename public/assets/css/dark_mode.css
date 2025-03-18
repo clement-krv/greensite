@@ -1,30 +1,85 @@
 /* Mode sombre activé via une classe */
 body.dark-mode {
-    --background: #121212;
-    --text: #e0e0e0;
-    --primary: #009688;
-    --secondary: #007a5e;
-    --white: #333;
-    --dark-gray: #f4f4f4;
+    --background: #181818; /* Fond général plus foncé */
+    --text: #e0e0e0; /* Texte blanc cassé pour éviter un contraste trop fort */
+    --primary: #007a5e; /* Conserve les couleurs principales */
+    --secondary: #009688;
+    --white: #ffffff; /* Blanc pour le texte */
+    --dark-gray: #282828; /* Fond des sections */
+}
+
+/* Appliquer un fond sombre partout */
+.dark-mode body {
+    background-color: var(--background);
+    color: var(--text);
 }
 
 /* Header et Footer */
 .dark-mode .header,
 .dark-mode .footer {
     background: var(--dark-gray);
+    color: var(--white);
 }
 
+/* Navigation */
 .dark-mode .nav-link {
-    color: var(--dark-gray);
+    color: var(--white);
 }
 
+.dark-mode .dark-mode-btn {
+    border-color: var(--white);
+    color: var(--white);
+}
+
+.dark-mode .dark-mode-btn:hover {
+    background: var(--white);
+    color: var(--primary);
+}
+
+/* Section Hero */
 .dark-mode .hero {
     background: var(--secondary);
     color: var(--white);
 }
 
-/* Articles */
+/* Section Articles */
+.dark-mode .articles {
+    background: var(--background);
+}
+
 .dark-mode .article {
-    background: #1e1e1e;
+    background: #222222; /* Légèrement plus clair pour la séparation */
     color: var(--text);
+    border: 1px solid var(--dark-gray); /* Bordure discrète */
+}
+
+/* Liens */
+.dark-mode a {
+    color: #66c2ff; /* Bleu clair pour plus de visibilité */
+}
+
+.dark-mode a:hover {
+    color: #ffffff;
+}
+
+
+.dark-mode .contact-form {
+    background: #222; /* Fond foncé */
+    color: var(--text);
+}
+
+.dark-mode .form-group input,
+.dark-mode .form-group textarea {
+    background: #333;
+    color: var(--text);
+    border: 1px solid var(--white);
+}
+
+.dark-mode .btn {
+    background: var(--secondary);
+    color: var(--white);
+}
+
+.dark-mode .btn:hover {
+    background: var(--primary);
 }
