@@ -34,16 +34,20 @@ document.addEventListener("DOMContentLoaded", () => {
     function afficherArticles(articles) {
         articlesContainer.innerHTML = "";
 
-        articles.forEach((article) => {
+        articles.forEach((article, index) => {
             const articleDiv = document.createElement("div");
             articleDiv.classList.add("article");
+
+            let imageTag = "";
+            if (index < 5 && article.image) {
+                imageTag = `<img src="${article.image}" alt="${article.title}" class="lazyload">`;
+            }
 
             articleDiv.innerHTML = `
                 <h3>${article.title}</h3>
                 <p>${article.content}</p>
                 <p><strong>Écrit par :</strong> ${article.author || "Inconnu"} - <em>${article.date || "Non daté"}</em></p>
-                <img src="" data-src="${article.image}" class="lazyload" alt="${article.title}">
-                <a href="${article.slug}.html" class="btn">Lire plus</a>
+                ${imageTag}
             `;
 
             const tagsContainer = document.createElement("div");

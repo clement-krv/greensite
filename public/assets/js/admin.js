@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p><strong>Auteur:</strong> ${article.author}</p>
                 <p><strong>Date:</strong> ${article.date}</p>
                 <p>${article.content}</p>
-                <img src="${article.image}" alt="${article.title}" class="article-image">
+                ${article.image ? `<img src="${article.image}" alt="${article.title}" class="article-image">` : ""}
                 <button class="edit-btn" data-index="${index}">✏ Modifier</button>
                 <button class="delete-btn" data-index="${index}">🗑 Supprimer</button>
             `;
@@ -47,10 +47,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const slug = document.getElementById("slug").value;
         const author = document.getElementById("author").value;
         const content = document.getElementById("content").value;
-        const image = document.getElementById("image").value;
         const date = getFormattedDate();
 
-        const article = { title, slug, author, content, image, date };
+        const article = { title, slug, author, content, date };
 
         if (id === "") {
             articles.push(article);
@@ -71,7 +70,6 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("slug").value = article.slug;
         document.getElementById("author").value = article.author;
         document.getElementById("content").value = article.content;
-        document.getElementById("image").value = article.image;
     }
 
     function supprimerArticle(index) {
